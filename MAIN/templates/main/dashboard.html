@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+	<h1>dashbiard {{user.username}}</h1><br>
+
+	<ul>
+	{% for i in calon %}
+		<li>{{i.username}} || {{i.suara}} suara</li>
+		<a href="{% url 'user:voted' i.uuid %}"><button type="button">pilih</button></a>
+		<button type="button">detail</button><br>
+	{% endfor %}
+	</ul>
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	
+	<script type="text/javascript">
+		alert("username atau email telah terdaftar sebagai calon");
+		document.location.href = "{% url 'user:register' %}";
+	</script>
+
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+	<form method="POST">
+		{% csrf_token %}
+
+		{% for i in form %}
+
+			{{i.label}}
+			{{i}}<br>
+
+		{% endfor %}
+
+		<button type="submit">login</button>
+	</form>
+
+	{% if condition %}
+		<script type="text/javascript">
+			alert("username atau password anda salah");
+			document.location.href = "{% url 'user:login' %}"
+		</script>
+	{% endif %}
+
+{% endblock content %}

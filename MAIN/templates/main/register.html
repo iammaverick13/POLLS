@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+	<form method="POST">
+		{% csrf_token %}
+		{% for i in form %}
+			{{i.label}}
+			{{i}}<br>
+		{% endfor %}
+		<button type="submit">daftar</button>
+	</form>
+
+{% endblock content %}

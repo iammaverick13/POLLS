@@ -40,6 +40,7 @@ class User(AbstractBaseUser):
     username = models.CharField(max_length=255, unique=True, default='')
     email = models.EmailField(blank=True, null=True)
     uuid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False)
+    hak_pilih = models.IntegerField(default=1, editable=False)
     active = models.BooleanField(default=True)
     staff = models.BooleanField(default=True)
     admin = models.BooleanField(default=True)
@@ -69,3 +70,14 @@ class User(AbstractBaseUser):
     @property
     def is_active(self):
         return self.active
+
+class Calon(models.Model):
+    objects = UserManager()
+
+    username = models.CharField(max_length=255)
+    email = models.EmailField()
+    password = models.CharField(max_length=255)
+    suara = models.IntegerField(default=0, editable=False)
+
+    def __str__(self):
+        return self.username

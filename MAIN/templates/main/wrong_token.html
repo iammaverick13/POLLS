@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+	<script type="text/javascript">
+		alert("token yang anda masukkan salah");
+		document.location.href = "{% url 'user:register' %}";
+	</script>
+
+{% endblock content %}
