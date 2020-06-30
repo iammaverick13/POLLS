@@ -1,15 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="{% static 'style/user/register.css' %}">
+{% endblock style %}
+
 {% block content %}
 
-	<form method="POST">
-		{% csrf_token %}
-		{% for i in form %}
-			{{i.label}}
-			{{i}}<br>
-		{% endfor %}
-		<button type="submit">daftar</button>
-	</form>
+	<div class="card">
+		<form method="POST">
+			{% csrf_token %}
+			<div class="register">
+				{% for i in form %}
+					<p>{{i.label}}</p>
+					<p>{{i}}<br></p>
+				{% endfor %}
+				<button type="submit">daftar</button>
+			</div>
+
+			<div class="specific-button">
+				<a href="{% url 'home' %}"><button class="btn btn-danger" type="button">back</button></a>
+			</div>
+		</form>
+	</div>
 
 {% endblock content %}

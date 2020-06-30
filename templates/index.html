@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="{% static 'style/home.css' %}">
+{% endblock style %}
 
 {% block content %}
 
 	<div class="card">
-		<h3>POLLS</h3>
 		<div class="choices">
-			<a href="{% url 'user:login' %}"><button type="button">memilih</button></a>
-			<a href="{% url 'user:register' %}"><button type="button">mencalon</button></a>
+			<h3>POLLS</h3>
+			<a href="{% url 'user:login' %}"><button class="btn btn-success" type="button">memilih</button></a>
+			<a href="{% url 'user:register' %}"><button class="btn btn-success" type="button">mencalon</button></a>
 		</div>
 	</div>
+
 
 {% endblock content %}

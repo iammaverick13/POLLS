@@ -1,21 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="{% static 'style/user/login.css' %}">
+{% endblock style %}
 
 {% block content %}
 
-	<form method="POST">
-		{% csrf_token %}
+	<div class="card">
+		<form method="POST">
+			{% csrf_token %}
 
-		{% for i in form %}
+			<div class="login">
+			{% for i in form %}
 
-			{{i.label}}
-			{{i}}<br>
+				<p>{{i.label}}</p>
+				<p>{{i}}</p>
 
-		{% endfor %}
+			{% endfor %}
 
-		<button type="submit">login</button>
-	</form>
+			<button type="submit">login</button>
+			</div>
+		</form>
+		
+		<a href="{% url 'home' %}"><button class="btn btn-danger" type="button">back</button></a>
+	</div>
 
 	{% if condition %}
 		<script type="text/javascript">

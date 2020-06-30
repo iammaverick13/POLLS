@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import *
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 from .forms import *
 
@@ -84,8 +85,9 @@ def loginView(request):
 
 def logoutView(request):
     logout(request)
-    return redirect('/accounts/register')
+    return redirect('/accounts/logout')
 
+@login_required
 def dashboardView(request, uuid):
     user = User.objects.get(uuid=uuid)
     list_calon = Calon.objects.all()
@@ -94,13 +96,3 @@ def dashboardView(request, uuid):
         'calon':list_calon,
     }
     return render(request, 'main/dashboard.html', context)
-
-def update_vote(request, uuid_pemilih, uuid):
-    user = Calon.objects.get(uuid=uuid)
-
-    user.suara += 1
-
-    pemilih.save()
-    user.save()
-
-    return redirect("/accounts/dashboard/"+str())

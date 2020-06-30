@@ -78,6 +78,7 @@ class Calon(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length=255)
     suara = models.IntegerField(default=0, editable=False)
+    uuid = models.UUIDField(default=uuid.uuid4, editable=False)
 
     def __str__(self):
         return self.username

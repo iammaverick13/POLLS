@@ -8,5 +8,4 @@ urlpatterns = [
     path('logout/', logoutView, name='logout'),
     path('login/', loginView, name='login'),
     path('dashboard/<uuid:uuid>/', dashboardView, name='dashboard'),
-    path('voted/<uuid:pemilih_uuid>/<uuid:calon_uuid>/', update_vote, name='voted'),
 ]
