@@ -25,7 +25,7 @@ SECRET_KEY = 't=s$^g860-b!#_#r_l$6m6vk=a*b4rm#%p7%ggd+bahnl%0_i^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['imamsodik.pythonanywhere.com']
 
 
 # Application definition
