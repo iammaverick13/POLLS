@@ -1,0 +1,24 @@
+.card {
+	width: 400px;
+	height: 380px;
+	background-color: #4ee7ff;
+	border-color: white;
+	border-radius: 2%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+	margin: 10% 34%;
+}
+
+.choices {
+	margin: 30% 20%;
+}
+
+h3 {
+	text-align: center;
+	font-size: 40px;
+}
+
+button {
+	width: 49%;
+	height: 50px;
+	font-size: 20px;
+}
